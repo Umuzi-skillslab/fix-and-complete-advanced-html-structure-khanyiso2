@@ -1,76 +1,240 @@
-/* Basic styles with multiple errors and missing features */
-
-body {
-    font-family: Arial;
+/* ---------- GLOBAL RESET ---------- */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- BODY ---------- */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
     color: #333;
 }
 
+/* ---------- HEADER ---------- */
 .top {
     background-color: #1a1a1a;
     color: white;
     padding: 20px;
+    text-align: center;
 }
 
 .top h1 {
-    margin: 0;
+    margin-bottom: 10px;
 }
 
-/* Navigation - not using flexbox, poor styling */
+/* ---------- NAVIGATION (FLEXBOX #1) ---------- */
 .nav {
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .nav a {
     color: white;
-    margin-right: 15px;
+    font-weight: bold;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* Missing: pseudo-classes for hover effects */
-/* Missing: combination selectors */
-/* Missing: advanced selector types (attribute, child, etc) */
+/* PSEUDO-CLASSES */
+.nav a:hover {
+    color: #00CFFF;
+}
 
+.nav a:focus {
+    outline: 2px solid #00CFFF;
+}
+
+.nav a:active {
+    color: #ff6600;
+}
+
+/* ---------- HERO SECTION ---------- */
 .hero {
+    text-align: center;
     padding: 60px 20px;
-    background-color: lightgray;
-    /* Poor colour contrast */
-    color: #ddd;
+    background-color: #ddd;
+    color: #222;
 }
 
-/* Missing: flexbox layouts (requirement: 2+ flexbox layouts) */
-/* Missing: CSS Grid layout (requirement: 1+ grid layout) */
+.hero h2 {
+    font-size: 2rem;
 
+    /* TEXT EFFECT */
+    text-shadow: 2px 2px #aaa;
+    background: linear-gradient(to right, #007BFF, #00CFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* ANIMATION */
+    animation: bounce 2s infinite;
+}
+
+.hero p {
+    margin-top: 15px;
+}
+
+/* ---------- CONTENT ---------- */
 .content {
     padding: 40px 20px;
 }
 
-/* Missing: text effects (shadows, gradients) */
-/* Missing: transforms */
-/* Missing: transitions */
-/* Missing: keyframe animations */
-
-img {
-    max-width: 100%;
+/* ---------- SERVICES (FLEXBOX #2) ---------- */
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: 2rem 0;
 }
 
-/* Video and audio styling missing */
+/* CHILD SELECTOR */
+.services-container > .service {
+    flex: 1 1 250px;
+    background-color: #fff;
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 
-/* Form styling incomplete */
-form input {
+    /* TRANSITIONS */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* COMBINATION SELECTOR + TRANSFORM */
+.services-container > .service:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* PSEUDO-CLASSES */
+.service:first-child {
+    border: 2px solid #007BFF;
+}
+
+.service:nth-child(2) {
+    background-color: #f0f8ff;
+}
+
+/* ---------- GRID LAYOUT ---------- */
+.portfolio-grid {
+    display: grid;
+
+    /* GRID REQUIREMENTS */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.portfolio-grid figure {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+    transition: transform 0.3s ease;
+}
+
+/* TRANSFORM */
+.portfolio-grid figure:hover {
+    transform: translateY(-10px) rotate(-1deg);
+}
+
+.portfolio-grid img {
+    width: 100%;
     display: block;
-    margin: 10px 0;
-    padding: 5px;
+}
+
+/* ---------- MEDIA (VIDEO/AUDIO/IFRAME) ---------- */
+video,
+audio,
+iframe {
+    width: 100%;
+    max-width: 640px;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 8px;
+}
+
+iframe {
+    height: 400px;
+    border: none;
+}
+
+/* ---------- FORM ---------- */
+form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+form fieldset {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* ATTRIBUTE SELECTOR */
+input[type="email"] {
+    background-color: #f9f9f9;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* COMBINATION SELECTOR */
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
 }
 
 form button {
     padding: 10px 20px;
-    background-color: blue;
+    background-color: #007BFF;
     color: white;
     border: none;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+form button:hover {
+    background-color: #00CFFF;
+    transform: scale(1.05);
+}
+
+/* ---------- ID SELECTOR ---------- */
+#highlight {
+    color: red;
+    font-weight: bold;
+}
+
+/* ---------- FOOTER ---------- */
 .bottom {
     background-color: #333;
     color: white;
@@ -78,8 +242,27 @@ form button {
     text-align: center;
 }
 
-/* Missing: responsive design with media queries */
-/* Missing: advanced layout techniques */
-/* Code quality issues: poor naming, no comments, inconsistent spacing */
-/* Only using 3 selector types (element, class) - needs 5+ */
-/* No pseudo-classes used - needs 5+ */
+/* ---------- ANIMATION ---------- */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
+    60% { transform: translateY(-7px); }
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .services-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+}
