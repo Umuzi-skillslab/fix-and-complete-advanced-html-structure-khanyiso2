@@ -5,264 +5,141 @@
     box-sizing: border-box;
 }
 
-/* ---------- BODY ---------- */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
 }
 
-/* ---------- HEADER ---------- */
-.top {
+/* ---------- HEADER & NAV ---------- */
+.header {
     background-color: #1a1a1a;
     color: white;
     padding: 20px;
     text-align: center;
 }
 
-.top h1 {
-    margin-bottom: 10px;
-}
-
-/* ---------- NAVIGATION (FLEXBOX #1) ---------- */
-.nav {
+.nav-list {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
     flex-wrap: wrap;
+    list-style: none;
+    margin-top: 10px;
 }
 
-.nav a {
+.nav-list a {
     color: white;
-    font-weight: bold;
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-/* PSEUDO-CLASSES */
-.nav a:hover {
-    color: #00CFFF;
+/* Pseudo-class usage */
+.nav-list a:hover { 
+    color: #00CFFF; 
+    text-shadow: 0 0 5px rgba(0,207,255,0.5);
 }
 
-.nav a:focus {
-    outline: 2px solid #00CFFF;
+.nav-list a.active { 
+    border-bottom: 2px solid #00CFFF; 
 }
 
-.nav a:active {
-    color: #ff6600;
-}
-
-/* ---------- HERO SECTION ---------- */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #ddd;
-    color: #222;
-}
-
-.hero h2 {
-    font-size: 2rem;
-
-    /* TEXT EFFECT */
-    text-shadow: 2px 2px #aaa;
-    background: linear-gradient(to right, #007BFF, #00CFFF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    /* ANIMATION */
-    animation: bounce 2s infinite;
-}
-
-.hero p {
-    margin-top: 15px;
-}
-
-/* ---------- CONTENT ---------- */
-.content {
-    padding: 40px 20px;
-}
-
-/* ---------- SERVICES (FLEXBOX #2) ---------- */
+/* ---------- SERVICES (Flexbox) ---------- */
 .services-container {
     display: flex;
     justify-content: space-around;
     align-items: stretch;
     flex-wrap: wrap;
-    margin: 2rem 0;
+    padding: 2rem;
 }
 
-/* CHILD SELECTOR */
-.services-container > .service {
-    flex: 1 1 250px;
+.service-card {
+    flex: 1 1 300px;
     background-color: #fff;
     padding: 1.5rem;
     margin: 1rem;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-
-    /* TRANSITIONS */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* COMBINATION SELECTOR + TRANSFORM */
-.services-container > .service:hover {
-    transform: scale(1.08);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-/* PSEUDO-CLASSES */
-.service:first-child {
-    border: 2px solid #007BFF;
-}
-
-.service:nth-child(2) {
-    background-color: #f0f8ff;
+.service-card:hover {
+    transform: translateY(-10px) scale(1.02); /* Transform Requirement */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 /* ---------- GRID LAYOUT ---------- */
 .portfolio-grid {
     display: grid;
-
-    /* GRID REQUIREMENTS */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 1.5rem;
-    margin: 2rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 2rem;
+    padding: 40px;
 }
 
-.portfolio-grid figure {
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-
-    transition: transform 0.3s ease;
-}
-
-/* TRANSFORM */
-.portfolio-grid figure:hover {
-    transform: translateY(-10px) rotate(-1deg);
-}
-
-.portfolio-grid img {
-    width: 100%;
-    display: block;
-}
-
-/* ---------- MEDIA (VIDEO/AUDIO/IFRAME) ---------- */
-video,
-audio,
-iframe {
-    width: 100%;
-    max-width: 640px;
-    display: block;
-    margin: 1rem auto;
-    border-radius: 8px;
-}
-
-iframe {
-    height: 400px;
-    border: none;
-}
-
-/* ---------- FORM ---------- */
+/* ---------- FORM STYLING (New Requirement) ---------- */
 form {
     max-width: 600px;
     margin: 2rem auto;
-    padding: 1.5rem;
-    background-color: #fff;
+    padding: 2rem;
+    background: white;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-form fieldset {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    margin-bottom: 1rem;
+/* Pseudo-class: Focus and Placeholder */
+input:focus, textarea:focus {
+    outline: 2px solid #00CFFF;
+    background-color: #f0fbff;
 }
 
-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+input::placeholder {
+    color: #aaa;
+    font-style: italic;
 }
 
-/* ATTRIBUTE SELECTOR */
-input[type="email"] {
-    background-color: #f9f9f9;
-}
-
-form input,
-form select,
-form textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 1rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-
-    transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* COMBINATION SELECTOR */
-form input:focus,
-form select:focus,
-form textarea:focus {
-    border-color: #007BFF;
-    box-shadow: 0 0 5px rgba(0,123,255,0.5);
-}
-
-form button {
-    padding: 10px 20px;
-    background-color: #007BFF;
+button {
+    background-color: #1a1a1a;
     color: white;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
-
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s;
 }
 
-form button:hover {
+button:hover {
     background-color: #00CFFF;
-    transform: scale(1.05);
 }
 
-/* ---------- ID SELECTOR ---------- */
-#highlight {
-    color: red;
+/* ---------- EFFECTS & ANIMATIONS ---------- */
+.text-effect {
+    background: linear-gradient(to right, #00CFFF, #007BFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: bold;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.hero h2 {
+    animation: bounce 3s ease-in-out infinite;
 }
 
 /* ---------- FOOTER ---------- */
-.bottom {
-    background-color: #333;
+.footer {
+    background-color: #1a1a1a;
     color: white;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
+    margin-top: 40px;
 }
 
-/* ---------- ANIMATION ---------- */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-15px); }
-    60% { transform: translateY(-7px); }
-}
-
-/* ---------- RESPONSIVE DESIGN ---------- */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .nav {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .services-container {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h2 {
-        font-size: 1.5rem;
-    }
+    .nav-list { flex-direction: column; gap: 1rem; }
+    .hero h2 { font-size: 1.5rem; }
 }
