@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://umuzi-skillslab.github.io/fix-and-complete-advanced-html-structure-khanyiso2/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Media Production Company offering professional video, audio, and cinematic multimedia services globally.">
+    <title>Media Production | Home</title>
+    <link rel="stylesheet" href="./desktop-chrome_files/styles.css">
+    <link rel="stylesheet" href="./desktop-chrome_files/layout.css">
+    <link rel="stylesheet" href="./desktop-chrome_files/animations.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Media Production Company</h1>
+        <nav aria-label="Main Navigation">
+            <ul class="nav-list">
+                <li><a href="https://umuzi-skillslab.github.io/fix-and-complete-advanced-html-structure-khanyiso2/index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="https://umuzi-skillslab.github.io/fix-and-complete-advanced-html-structure-khanyiso2/about.html">About</a></li>
+                <li><a href="https://umuzi-skillslab.github.io/fix-and-complete-advanced-html-structure-khanyiso2/media.html">Media</a></li>
+                <li><a href="https://umuzi-skillslab.github.io/fix-and-complete-advanced-html-structure-khanyiso2/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <article class="hero-content">
+                <h2 id="highlight">Professional Media Production Services</h2>
+                <p>We create high-quality visual and audio content that helps brands tell their story with massive impact.</p>
+                <figure class="hero-media">
+                    <video controls="" poster="images/herobg.jpg">
+                        <source src="media/video1.mp4" type="video/mp4">
+                        Your browser does not support the embedded video tag playback features.
+                    </video>
+                    <figcaption>Behind the scenes preview of our latest multimedia project execution.</figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <section class="services">
+            <h2>What We Do</h2>
+            <div class="services-container">
+                <article class="service-card">
+                    <figure>
+                        <img src="./desktop-chrome_files/service1.jpg" alt="Camera setup configurations setup for high-end video production tracking">
+                        <figcaption>Video Production</figcaption>
+                    </figure>
+                    <p>From narrative concept development to the final grade edit, we produce deeply engaging video content.</p>
+                </article>
+
+                <article class="service-card">
+                    <figure>
+                        <img src="./desktop-chrome_files/service2.jpg" alt="Audio mixing studio equipment and tracking monitors">
+                        <figcaption>Audio Production</figcaption>
+                    </figure>
+                    <p>We deliver crisp, pristine high-fidelity acoustic sound tracking for all digital cinema projects.</p>
+                </article>
+
+                <article class="service-card">
+                    <figure>
+                        <img src="./desktop-chrome_files/service3.jpg" alt="DSLR camera rig mounted on a professional tripod lighting array">
+                        <figcaption>Commercial Photography</figcaption>
+                    </figure>
+                    <p>Capturing stunning high-definition visual assets built to scale perfectly across corporate campaigns.</p>
+                </article>
+            </div>
+        </section>
+
+        <aside class="testimonial-highlight">
+            <h3>Client Spotlight</h3>
+            <blockquote cite="https://mediaproduction.co.za/testimonials">
+                <p>"Outstanding turnaround speed, precise technical execution, and unparalleled professionalism across every phase."</p>
+                <cite>— Jane Smith, Executive Producer at ABC Corp</cite>
+            </blockquote>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <section class="footer-details">
+            <p>Inquiries: contact@mediaproduction.co.za</p>
+            <p>Phone Support: +27 11 555 0123</p>
+        </section>
+        <hr>
+        <p>© 2026 Media Production Company. All rights reserved.</p>
+    </footer>
+
+</body></html>
