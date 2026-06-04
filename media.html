@@ -1,53 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore our media production work.">
-    <title>Media Production | Media</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore our technical media gallery showcasing advanced video showcases, cinematic audio production, and our Johannesburg studio layout."
+    />
+    <title>Media Gallery | Media Production Specialist</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <header class="header">
-        <h1>Media Gallery</h1>
-        <nav aria-label="Main Navigation">
-            <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="media.html" class="active">Media</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+      <h1>Media Gallery</h1>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <a href="media.html" class="active" aria-current="page">Media</a>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section class="videos">
-            <h2>Video Showcase</h2>
-            <div class="video-container">
-                <figure>
-                    <video controls width="640" height="360">
-                        <source src="media/sample1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <figcaption>Corporate brand video production</figcaption>
-                </figure>
-            </div>
-        </section>
+      <section class="videos">
+        <h2>Video Showcase</h2>
+        <div class="video-container">
+          <figure class="video-wrapper">
+            <video
+              controls
+              width="640"
+              height="360"
+              poster="images/poster-brand.jpg"
+            >
+              <source src="media/sample1.mp4" type="video/mp4" />
+              Your browser does not support the embedded video tag. Please
+              update your browser to view this content.
+            </video>
+            <figcaption>
+              Corporate brand video production featuring high-key commercial
+              lighting arrays.
+            </figcaption>
+          </figure>
 
-        <section class="location">
-            <h2>Our Studio Location</h2>
-            <figure>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1!2d1!3d1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sza!4v1" 
-                    width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
-                <figcaption>Visit our studio in Johannesburg</figcaption>
-            </figure>
-        </section>
+          <figure class="video-wrapper">
+            <video
+              controls
+              width="640"
+              height="360"
+              poster="images/poster-cinematic.jpg"
+            >
+              <source src="media/sample2.mp4" type="video/mp4" />
+              Your browser does not support the embedded video tag. Please
+              update your browser to view this content.
+            </video>
+            <figcaption>
+              Cinematic drone reel captured across structural layouts in
+              Gauteng.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="audio-showcase">
+        <h2>Audio Engineering Master Track</h2>
+        <p>
+          Listen to our clean studio audio tracking and multi-layered sound
+          design master file.
+        </p>
+        <figure class="audio-wrapper">
+          <audio controls>
+            <source src="media/sample-audio.mp3" type="audio/mpeg" />
+            Your browser does not support the audio playback element.
+          </audio>
+          <figcaption>
+            Mastering Suite Demo - 24-bit linear PCM audio sample output.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="location">
+        <h2>Our Studio Location</h2>
+        <p>
+          Our operational headquarters and mixing bays are located in
+          Jeppestown.
+        </p>
+        <figure class="iframe-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1!2d1!3d1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sza!4v1"
+            width="600"
+            height="400"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            title="Interactive Google Map showing the main studio branch in Johannesburg"
+          >
+          </iframe>
+          <figcaption>
+            Visit our primary post-production studio setup in Johannesburg
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="gallery-highlights">
+        <h2>Behind the Scenes Spotlight</h2>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img
+              src="images/gallery-camera.jpg"
+              alt="Close up view of an anamorphic cinema lens calibrated for a production set"
+            />
+            <figcaption>
+              A-Cam configuration using advanced anamorphic lens focal lengths.
+            </figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="images/gallery-console.jpg"
+              alt="A high end digital mixing board tracking audio waveforms inside a sound dampening room"
+            />
+            <figcaption>
+              Main audio console tracking live vocal takes in our treated mixing
+              room.
+            </figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="images/gallery-lighting.jpg"
+              alt="Studio overhead softboxes illuminating an empty editorial interview space"
+            />
+            <figcaption>
+              Diffused softbox configurations engineered for commercial color
+              spaces.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <p>© 2026 Media Production Company</p>
+      <article class="footer-meta">
+        <h3>Get In Touch</h3>
+        <p>Inquiries: contact@mediaproduction.co.za</p>
+      </article>
+      <hr />
+      <p>© 2026 Media Production Company. All rights reserved.</p>
     </footer>
-</body>
+  </body>
 </html>
