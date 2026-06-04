@@ -1,9 +1,14 @@
 /* ---------- HERO SECTION STRUCTURE ---------- */
 .hero {
+    position: relative;
+    background-image: url('../images/herobg.jpg');  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 80px 20px;
-    background-color: #1e272e;
     color: #ffffff;
     text-align: center;
+    z-index: 1;
 }
 
 .hero-content {
