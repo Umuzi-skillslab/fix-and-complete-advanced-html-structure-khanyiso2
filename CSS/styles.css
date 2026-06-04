@@ -1,23 +1,53 @@
-/* ---------- GLOBAL RESET ---------- */
-* {
+/* ---------- GLOBAL RESET & VARIABLE ARCHITECTURE ---------- */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
 }
 
-/* ---------- HEADER & NAV ---------- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ---------- GLOBAL TYPOGRAPHY ADVANCED SELECTORS ---------- */
+h1, h2, h3 {
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+}
+
+/* Adjacent Sibling Selector: Formats introduction paragraphs following headers */
+h2 + p {
+    margin-top: 0.5rem;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+/* Structural Pseudo-class implementation */
+main section:not(.hero) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- STRUCTURAL HEADER & NAV SYSTEM ---------- */
 .header {
     background-color: #1a1a1a;
-    color: white;
-    padding: 20px;
+    color: #ffffff;
+    padding: 25px 20px;
     text-align: center;
+}
+
+/* Child Combinator Selection Rule */
+.header > h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
 }
 
 .nav-list {
@@ -27,119 +57,69 @@ body {
     gap: 2rem;
     flex-wrap: wrap;
     list-style: none;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .nav-list a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 6px 0;
+    transition: color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), text-shadow 0.3s ease;
 }
 
-/* Pseudo-class usage */
+/* Interactive Pseudo-classes */
 .nav-list a:hover { 
     color: #00CFFF; 
-    text-shadow: 0 0 5px rgba(0,207,255,0.5);
+    text-shadow: 0 0 8px rgba(0, 207, 255, 0.4);
+}
+
+.nav-list a:focus-visible {
+    outline: 2px dashed #00CFFF;
+    outline-offset: 4px;
 }
 
 .nav-list a.active { 
     border-bottom: 2px solid #00CFFF; 
 }
 
-/* ---------- SERVICES (Flexbox) ---------- */
-.services-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-    flex-wrap: wrap;
+/* ---------- TESTIMONIALS & SIDEBAR ASIDES ---------- */
+.testimonial-highlight, .office-hours-sidebar {
     padding: 2rem;
-}
-
-.service-card {
-    flex: 1 1 300px;
-    background-color: #fff;
-    padding: 1.5rem;
-    margin: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-10px) scale(1.02); /* Transform Requirement */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* ---------- GRID LAYOUT ---------- */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 2rem;
-    padding: 40px;
-}
-
-/* ---------- FORM STYLING (New Requirement) ---------- */
-form {
-    max-width: 600px;
+    background-color: #ffffff;
+    border-left: 4px solid #00CFFF;
     margin: 2rem auto;
-    padding: 2rem;
-    background: white;
-    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-/* Pseudo-class: Focus and Placeholder */
-input:focus, textarea:focus {
-    outline: 2px solid #00CFFF;
-    background-color: #f0fbff;
-}
-
-input::placeholder {
-    color: #aaa;
+blockquote {
     font-style: italic;
+    color: #444;
 }
 
-button {
-    background-color: #1a1a1a;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
+blockquote cite {
+    display: block;
+    margin-top: 12px;
+    font-weight: 700;
+    font-style: normal;
+    color: #1a1a1a;
+    font-size: 0.9rem;
 }
 
-button:hover {
-    background-color: #00CFFF;
-}
-
-/* ---------- EFFECTS & ANIMATIONS ---------- */
-.text-effect {
-    background: linear-gradient(to right, #00CFFF, #007BFF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
-.hero h2 {
-    animation: bounce 3s ease-in-out infinite;
-}
-
-/* ---------- FOOTER ---------- */
+/* ---------- GLOBAL FOOTER ARCHITECTURE ---------- */
 .footer {
     background-color: #1a1a1a;
-    color: white;
-    padding: 30px;
+    color: #ffffff;
+    padding: 40px 20px;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .nav-list { flex-direction: column; gap: 1rem; }
-    .hero h2 { font-size: 1.5rem; }
+.footer hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+    margin: 20px 0;
 }

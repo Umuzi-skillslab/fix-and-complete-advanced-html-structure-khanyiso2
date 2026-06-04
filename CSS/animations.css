@@ -1,0 +1,65 @@
+/* ---------- FOCUS HOVER STATE INTERACTION TRANSLATIONS ---------- */
+.service-card:hover, .video-wrapper:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.portfolio-item:hover, .gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+form button[type="submit"]:hover {
+    background-color: #00CFFF;
+    transform: translateY(-2px);
+}
+
+form button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Focus and Placeholder Transitions using Attribute Combos */
+form input:focus, form select:focus, form textarea:focus {
+    outline: none;
+    border-color: #00CFFF;
+    background-color: #f9feff;
+    box-shadow: 0 0 0 3px rgba(0, 207, 255, 0.15);
+}
+
+input[required]:focus {
+    border-left: 4px solid #00CFFF;
+}
+
+input::placeholder {
+    color: #bbb;
+    font-style: italic;
+}
+
+/* ---------- COMPLEX GRADIENT TEXT EFFECTS ---------- */
+.text-effect {
+    background: linear-gradient(135deg, #00CFFF, #007BFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* ---------- PERFORMANCE REOPTIMIZED KEYFRAME ENGINES ---------- */
+@keyframes fluidBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes enhancedFadeInDown {
+    0% { opacity: 0; transform: translateY(-25px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Applying Performance Engine Triggers */
+.hero h2 {
+    animation: fluidBounce 4s ease-in-out infinite;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+    animation: enhancedFadeInDown 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
