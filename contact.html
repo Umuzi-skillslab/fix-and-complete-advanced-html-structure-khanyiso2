@@ -37,9 +37,13 @@
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" placeholder="name@domain.co.za" required>
 
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="e.g. 0712345678" required pattern="^0[1-9][0-9]{8}$" maxlength="10">
-
+                   <label for="phone">Phone Number (+27 71 234 5678)</label>
+                   <input type="tel" id="phone" name="phone" 
+                          placeholder="+27 71 234 5678" 
+                          required 
+                          pattern="\+27\s[0-9]{2}\s[0-9]{3}\s[0-9]{4}" 
+                          maxlength="15">
+                    
                     <label for="client-url">Current Portfolio/Website URL</label>
                     <input type="url" id="client-url" name="client-url" placeholder="https://example.com">
 
