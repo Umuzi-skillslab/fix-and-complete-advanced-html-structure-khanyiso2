@@ -24,14 +24,12 @@ h1, h2, h3 {
     letter-spacing: -0.02em;
 }
 
-/* Adjacent Sibling Selector: Formats introduction paragraphs following headers */
 h2 + p {
     margin-top: 0.5rem;
     color: #555;
     font-size: 1.05rem;
 }
 
-/* Structural Pseudo-class implementation */
 main section:not(.hero) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -44,7 +42,6 @@ main section:not(.hero) {
     text-align: center;
 }
 
-/* Child Combinator Selection Rule */
 .header > h1 {
     font-size: 2.2rem;
     font-weight: 800;
@@ -69,7 +66,6 @@ main section:not(.hero) {
     transition: color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), text-shadow 0.3s ease;
 }
 
-/* Interactive Pseudo-classes */
 .nav-list a:hover { 
     color: #00CFFF; 
     text-shadow: 0 0 8px rgba(0, 207, 255, 0.4);
@@ -94,20 +90,6 @@ main section:not(.hero) {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-blockquote {
-    font-style: italic;
-    color: #444;
-}
-
-blockquote cite {
-    display: block;
-    margin-top: 12px;
-    font-weight: 700;
-    font-style: normal;
-    color: #1a1a1a;
-    font-size: 0.9rem;
-}
-
 /* ---------- GLOBAL FOOTER ARCHITECTURE ---------- */
 .footer {
     background-color: #1a1a1a;
@@ -117,9 +99,33 @@ blockquote cite {
     margin-top: 60px;
 }
 
-.footer hr {
-    border: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
-    margin: 20px 0;
+/* ---------- ABOUT PAGE SPECIFIC LAYOUTS ---------- */
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+.team-member figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.team-member img {
+    width: 200px;           
+    height: 250px;          
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; 
+    object-fit: cover;      
+    margin-bottom: 1rem;
+    border: 3px solid #00CFFF; 
+    transition: transform 0.3s ease;
+}
+
+.team-member img:hover {
+    transform: scale(1.05); 
 }
