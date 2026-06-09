@@ -117,12 +117,12 @@ main section:not(.hero) {
 }
 
 .team-member img {
-    width: 200px;           
-    height: 250px;          
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; 
-    object-fit: cover;      
+    width: 300px;           
+    height: 300px;          
+    border-radius: 50%;     
+    object-fit: cover;     
     margin-bottom: 1rem;
-    border: 3px solid #00CFFF; 
+    border: 5px solid #00CFFF; 
     transition: transform 0.3s ease;
 }
 
