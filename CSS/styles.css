@@ -129,3 +129,10 @@ main section:not(.hero) {
 .team-member img:hover {
     transform: scale(1.05); 
 }
+
+.team-member h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: #1a1a1a;
+}
